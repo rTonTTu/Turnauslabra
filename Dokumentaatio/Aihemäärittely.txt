@@ -1,0 +1,13 @@
+Aihe: Turnausjärjestelmä avustamaan turnauksen järjestäjiä sekä pelaajia. Alustavaksi suunniteltu Beerpongin pelaamisen yhteyteen. 
+
+Käyttäjät: Turnausjärjestäjät, tuomarit, pelaajat
+
+Kaikkien käyttäjien toiminnot: Tulosten lisääminen, peliin ilmoittautuminen, peliin rekisteröiminen.
+
+Turnausjärjestäjän toiminnot: Turnausten hallinta, luominen, poistaminen jne.
+
+Tuomareiden toiminnot: Pelien tulosten manipulointi, pelaajien manipulointi järjestelmässä
+
+Pelaajien toiminnot: Tietojensa muuttaminen halutessaan.
+
+

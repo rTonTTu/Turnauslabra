@@ -21,9 +21,15 @@ public class Pelaaja {
 
     }
 
-    public String getName(String nimi) {
+    public String getName() {
         return this.name;
     }
-    
-    public String getAge()
+
+    public int getNumber() {
+        return this.number;
+    }
+
+    public String getTeam() {
+        return this.team;
+    }
 }

@@ -10,36 +10,36 @@ package Osallistuja;
  */
 public class Pelaaja {
 
-    public String name;
-    public int number;
-    public String team;
+    public String nimi;
+    public int numero;
+    public String joukkue;
     public int ranking;
 
     public Pelaaja(String nimi, int numero, String joukkue, int ranking) {
-        this.name = nimi;
-        this.team = joukkue;
-        this.number = numero;
+        this.nimi = nimi;
+        this.joukkue = joukkue;
+        this.numero = numero;
         this.ranking = ranking;
 
     }
 
-    public String getName() {
-        return this.name;
+    public String haeNimi() {
+        return this.nimi;
     }
 
-    public int getNumber() {
-        return this.number;
+    public int haeNumero() {
+        return this.numero;
     }
 
-    public String getTeam() {
-        return this.team;
+    public String haeJoukkue() {
+        return this.joukkue;
     }
 
-    public int getRanking() {
+    public int haeRanking() {
         return this.ranking;
     }
 
-    public void setRanking(int ranking) {
+    public void asetaRanking(int ranking) {
         this.ranking = ranking;
     }
 }

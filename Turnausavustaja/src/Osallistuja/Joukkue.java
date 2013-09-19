@@ -13,45 +13,45 @@ import java.util.List;
  */
 public class Joukkue {
 
-    public String name;
+    public String nimi;
     public int ranking;
-    public int points;
-    public ArrayList<Pelaaja> players;
+    public int pisteet;
+    public ArrayList<Pelaaja> pelaajat;
 
     public Joukkue(String nimi, int ranking, int pisteet) {
-        this.name = nimi;
+        this.nimi = nimi;
         this.ranking = ranking;
-        this.points = pisteet;
+        this.pisteet = pisteet;
     }
 
-    public int getRanking() {
+    public int haeRanking() {
         return this.ranking;
     }
 
-    public void setRanking(int numero) {
+    public void asetaRanking(int numero) {
         this.ranking = numero;
     }
 
-    public int getPoints() {
-        return this.points;
+    public int haePisteet() {
+        return this.pisteet;
     }
 
-    public void setPoints(int pisteet) {
-        this.points = pisteet;
+    public void asetaPisteet(int pisteet) {
+        this.pisteet = pisteet;
     }
     
-    public void addPlayer(Pelaaja pelaaja) {
-        if (this.players.size() > 2) {
+    public void lisaaPelaaja(Pelaaja pelaaja) {
+        if (this.pelaajat.size() > 2) {
             System.out.println("Too many players in team");
         } else {
-            this.players.add(pelaaja);
+            this.pelaajat.add(pelaaja);
         }
         
     }
     
-    public void removePlayer(Pelaaja pelaaja) {
-        if (this.players.contains(pelaaja)) {
-            this.players.remove(pelaaja);
+    public void poistaPelaaja(Pelaaja pelaaja) {
+        if (this.pelaajat.contains(pelaaja)) {
+            this.pelaajat.remove(pelaaja);
         } else {
             System.out.println("No such player in team");
         }

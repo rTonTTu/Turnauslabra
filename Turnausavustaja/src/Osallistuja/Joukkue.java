@@ -31,6 +31,10 @@ public class Joukkue {
     public void asetaRanking(int numero) {
         this.ranking = numero;
     }
+    
+    public String haeNimi() {
+       return this.nimi;
+    }
 
     public int haePisteet() {
         return this.pisteet;
@@ -39,16 +43,16 @@ public class Joukkue {
     public void asetaPisteet(int pisteet) {
         this.pisteet = pisteet;
     }
-    
+
     public void lisaaPelaaja(Pelaaja pelaaja) {
         if (this.pelaajat.size() > 2) {
             System.out.println("Too many players in team");
         } else {
             this.pelaajat.add(pelaaja);
         }
-        
+
     }
-    
+
     public void poistaPelaaja(Pelaaja pelaaja) {
         if (this.pelaajat.contains(pelaaja)) {
             this.pelaajat.remove(pelaaja);
@@ -56,6 +60,14 @@ public class Joukkue {
             System.out.println("No such player in team");
         }
     }
-    
-    
+
+    public void listaaPelaajat(Joukkue joukkue) {
+        if (joukkue.pelaajat.isEmpty()) {
+            System.out.println("Joukkueessa ei ole pelaajia");
+        }
+        System.out.println("Joukkueessa " + joukkue.haeNimi() + " pelaavat:");
+        for (Pelaaja pelaaja : pelaajat) {
+            System.out.println(pelaaja.toString());
+        }
+    }
 }

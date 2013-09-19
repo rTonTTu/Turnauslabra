@@ -17,6 +17,10 @@ public class Joukkue {
     public int ranking;
     public int pisteet;
     public ArrayList<Pelaaja> pelaajat;
+    
+    /*
+     * Joukkueluokan sisältä löytyy joukkuieille tarpeelliset metodit, joilla voidaan hakea tietoa niistä, sekä listata osallistuvat pelaajat niihin.
+     */
 
     public Joukkue(String nimi, int ranking, int pisteet) {
         this.nimi = nimi;

@@ -15,6 +15,10 @@ public class Pelaaja {
     public String joukkue;
     public int ranking;
 
+    /*
+     * Luokan tarkoituksena pitää pelaajat listattavina henkilöinä, jotta laajennettaessa esim. voidaan siirtyä mm. 1vs1 kuvioon halutessa.
+     */
+    
     public Pelaaja(String nimi, int numero, String joukkue, int ranking) {
         this.nimi = nimi;
         this.joukkue = joukkue;
@@ -22,8 +26,8 @@ public class Pelaaja {
         this.ranking = ranking;
 
     }
-
-    public String haeNimi() {
+    
+    public String toString() {
         return this.nimi;
     }
 

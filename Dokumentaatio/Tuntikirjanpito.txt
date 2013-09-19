@@ -1,1 +1,5 @@
 To 5.9 13:30-14:00 30min - ensimmäisen deadlinen vaativat asiat, projekti, github repot, aihemäärittelyt.
+To 12.9 16:00-18:00 2h - Toisen deadlineen tehty luokkakaavio, lisätty luokat Pelaaja ja Joukkue sekä aloitettu yksikkötestien tekeminen.
+To 17.9 14:30-18:00 3h 30min - Laajennettu luomalla sovelluslogiikapaketti jonka sisällä pisteenlasku sekä lohkot, sekä rakennettu Turnausluokka turnauspakettiin, jossa käsitellään turnausta omana olionaan.
+
+Kokonaisaika: 6h.

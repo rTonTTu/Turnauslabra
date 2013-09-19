@@ -17,11 +17,10 @@ public class Joukkue {
     public int ranking;
     public int pisteet;
     public ArrayList<Pelaaja> pelaajat;
-    
+
     /*
      * Joukkueluokan sisältä löytyy joukkuieille tarpeelliset metodit, joilla voidaan hakea tietoa niistä, sekä listata osallistuvat pelaajat niihin.
      */
-
     public Joukkue(String nimi, int ranking, int pisteet) {
         this.nimi = nimi;
         this.ranking = ranking;
@@ -35,9 +34,9 @@ public class Joukkue {
     public void asetaRanking(int numero) {
         this.ranking = numero;
     }
-    
-    public String haeNimi() {
-       return this.nimi;
+
+    public String toString() {
+        return this.nimi;
     }
 
     public int haePisteet() {
@@ -69,7 +68,7 @@ public class Joukkue {
         if (joukkue.pelaajat.isEmpty()) {
             System.out.println("Joukkueessa ei ole pelaajia");
         }
-        System.out.println("Joukkueessa " + joukkue.haeNimi() + " pelaavat:");
+        System.out.println("Joukkueessa " + joukkue + " pelaavat:");
         for (Pelaaja pelaaja : pelaajat) {
             System.out.println(pelaaja.toString());
         }

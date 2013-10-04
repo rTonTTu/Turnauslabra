@@ -13,12 +13,21 @@ public class Pisteenlasku {
     /*
      * Luokka pitää kirjaa joukkueiden voitoista, häviöistä, pisteistä, tasapeleistä sekä ylipäänsä pelatuista peleistä, jotta tuloksia voidaan ylläpitää.
      */
+    
+    /**
+     * Luokan sisällä olevat metodit seuraavat jokaisen joukkueen pisteenlaskua, josta saadaan tulokset. Luokkamuuttujat ovat itsestäänselviä.
+     */
     private int pisteet;
     private int voitot;
     private int pelatut;
     private int tasapelit;
     private int haviot;
 
+    /**
+     * Konstruktorissa luodaan uusi pisteenlaskulista joukkueelle, joka osallistuu turnaukseen.
+     */
+    
+    
     public Pisteenlasku() {
         this.pisteet = 0;
         this.pelatut = 0;
@@ -41,6 +50,10 @@ public class Pisteenlasku {
             this.pisteet = (voitot * 3) + tasapelit;
         }
     }
+    
+    /**
+     * Metodi lisää joukkueelle voiton, kolme pistettä sekä pelatun pelin tilastoihin
+     */
 
     public void lisaaVoitto() {
         this.pisteet += 3;
@@ -48,10 +61,18 @@ public class Pisteenlasku {
         this.pelatut++;
     }
 
+    /**
+     * Metodi lisää joukkueelle häviön sekä pelatun pelin tilastoihin
+     */
+    
     public void lisaaHavio() {
         this.haviot++;
         this.pelatut++;
     }
+    
+    /**
+     * Metodi lisää joukkueelle tasapelin, pisteen sekä pelatun pelin tilastoihin
+     */
 
     public void lisaaTasuri() {
         this.tasapelit++;

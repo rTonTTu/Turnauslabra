@@ -4,6 +4,6 @@ To 17.9 14:30-18:00 3h 30min - Laajennettu luomalla sovelluslogiikapaketti jonka
 To 17.9 19:45-19:55 10min - Piirretty tuore versio luokkakaaviosta.
 To 17.9 20:50-21:00 10min - Tarkannettu luokkakaaviota
 To 3.10 12:00-15:55 3h 55min - Graafisen käyttöliittymän suunnittelua, swingbuilderin testailua ja uudelleenrakentelua.
-Pe 4.10 17:30- - Sekvenssikaavioiden lisäilyä, javadocin aloitus, luokkien refaktorointia
-Kokonaisaika: 10h 35min.
+Pe 4.10 17:30-19:45 2h 15min - Sekvenssikaavioiden lisäilyä, javadocin kiinniottaminen mm. kaikkeen, luokkien refaktorointia
+Kokonaisaika: 12h 50 min.
  

@@ -6,7 +6,7 @@ package Sovelluslogiikka;
 
 import Osallistuja.Joukkue;
 import java.util.ArrayList;
-import java.util.Arrays;
+
 
 /*
  * luokka pitää joukkueet lohkon sisällä, jolloin voidaan seurata lohkojen sisällä olevien otteluiden tuloksia.

@@ -12,13 +12,17 @@ import java.util.List;
  * @author TonTTu
  */
 public class Joukkue {
+    
+    /**
+     * Joukkueessa käytettävät luokkamuuttujat, jotka määrittelevät mm. nimen, rankingin, pisteet sekä joukkueessa olevat pelaajat
+     */
 
     public String nimi;
     public int ranking;
     public int pisteet;
     public ArrayList<Pelaaja> pelaajat;
 
-    /**
+    /*
      * Joukkueluokan sisältä löytyy joukkuieille tarpeelliset metodit, joilla voidaan hakea tietoa niistä, sekä listata osallistuvat pelaajat niihin.
      */
     

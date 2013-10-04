@@ -18,9 +18,17 @@ public class Joukkue {
     public int pisteet;
     public ArrayList<Pelaaja> pelaajat;
 
-    /*
+    /**
      * Joukkueluokan sisältä löytyy joukkuieille tarpeelliset metodit, joilla voidaan hakea tietoa niistä, sekä listata osallistuvat pelaajat niihin.
      */
+    
+    /**
+    * Joukkueen konstruktori joka luo joukkueen ja lisää sille tarvittavat tiedot, kuten nimen, rankingin sekä pisteet.
+    * 
+    * @param nimi Joukkueen nimi
+    * @param pisteet Joukkueen keräämät pisteet
+    * @param ranking Joukkueen tämänhetkinen rankingsijoitus
+    * */
     public Joukkue(String nimi, int ranking, int pisteet) {
         this.nimi = nimi;
         this.ranking = ranking;
@@ -35,6 +43,7 @@ public class Joukkue {
         this.ranking = numero;
     }
 
+    @Override
     public String toString() {
         return this.nimi;
     }
@@ -47,6 +56,12 @@ public class Joukkue {
         this.pisteet = pisteet;
     }
 
+     /**
+    * Metodi lisää pelaajan haluttuun joukkueeseen, joka on luotu aikaisemmin. Metodi pitää huolen ettei joukkueen pelaajamäärä nouse yli kahden.
+    * 
+    * @param pelaaja Määritelty pelaaja joka lisätään
+    * */
+    
     public void lisaaPelaaja(Pelaaja pelaaja) {
         if (this.pelaajat.size() > 2) {
             System.out.println("Liian monta pelaajaa joukkueessa");
@@ -55,6 +70,12 @@ public class Joukkue {
         }
 
     }
+    
+     /**
+    * Metodi poistaa pelaajan listasta mikäli löytää sen listalta. Mikäli näin ei tapahdu, ilmoittaa ohjelma siitä tekstikentässä huomioiden asian.
+    * 
+    * @param pelaaja Määritelty pelaaja joka poistetaan
+    * */
 
     public void poistaPelaaja(Pelaaja pelaaja) {
         if (this.pelaajat.contains(pelaaja)) {
@@ -63,12 +84,18 @@ public class Joukkue {
             System.out.println("Pelaajaa ei löytynyt");
         }
     }
+    
+     /**
+    * Metodi näyttää pelaajat listassa, jotka löytyvät listalta. Mikäli joukkueessa ei ole pelaajia,  
+    * 
+    * @param joukkue Listattava joukkue joka käsitellään ja tulostetaan.
+    * */
 
-    public void listaaPelaajat(Joukkue joukkue) {
-        if (joukkue.pelaajat.isEmpty()) {
+    public void listaaPelaajat() {
+        if (this.pelaajat.isEmpty()) {
             System.out.println("Joukkueessa ei ole pelaajia");
         }
-        System.out.println("Joukkueessa " + joukkue + " pelaavat:");
+        System.out.println("Joukkueessa " + this.nimi + " pelaavat:");
         for (Pelaaja pelaaja : pelaajat) {
             System.out.println(pelaaja.toString());
         }

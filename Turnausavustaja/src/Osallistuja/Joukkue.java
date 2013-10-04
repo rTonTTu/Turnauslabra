@@ -49,7 +49,7 @@ public class Joukkue {
 
     public void lisaaPelaaja(Pelaaja pelaaja) {
         if (this.pelaajat.size() > 2) {
-            System.out.println("Too many players in team");
+            System.out.println("Liian monta pelaajaa joukkueessa");
         } else {
             this.pelaajat.add(pelaaja);
         }
@@ -60,7 +60,7 @@ public class Joukkue {
         if (this.pelaajat.contains(pelaaja)) {
             this.pelaajat.remove(pelaaja);
         } else {
-            System.out.println("No such player in team");
+            System.out.println("Pelaajaa ei löytynyt");
         }
     }
 

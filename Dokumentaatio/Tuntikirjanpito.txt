@@ -3,4 +3,5 @@ To 12.9 16:00-18:00 2h - Toisen deadlineen tehty luokkakaavio, lisätty luokat Pe
 To 17.9 14:30-18:00 3h 30min - Laajennettu luomalla sovelluslogiikapaketti jonka sisällä pisteenlasku sekä lohkot, sekä rakennettu Turnausluokka turnauspakettiin, jossa käsitellään turnausta omana olionaan.
 To 17.9 19:45-19:55 10min - Piirretty tuore versio luokkakaaviosta.
 To 17.9 20:50-21:00 10min - Tarkannettu luokkakaaviota
-Kokonaisaika: 6h 20min.
+To 10.3 12:00-15:55 3h 55min - Graafisen käyttöliittymän suunnittelua, swingbuilderin testailua ja uudelleenrakentelua.
+Kokonaisaika: 10h 35min.

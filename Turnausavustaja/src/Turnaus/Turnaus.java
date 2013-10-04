@@ -13,11 +13,10 @@ import Sovelluslogiikka.Lohkot;
 import java.util.ArrayList;
 
 public class Turnaus {
-    
+
     /*
      * Luokan tehtävänä on ylläpitää turnausta sekä siihen osallistuvia joukkueita.
      */
-
     private ArrayList<Joukkue> osallistujat;
     private String nimi;
     private String pvm;
@@ -48,6 +47,10 @@ public class Turnaus {
         for (Joukkue osallistuja : this.osallistujat) {
             System.out.println(osallistuja);
         }
+    }
+
+    public void lisaaLohkoon(Lohkot lohko, Joukkue joukkue) {
+        lohko.lisaaJoukkue(joukkue);
     }
 
     @Override

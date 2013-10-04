@@ -10,4 +10,6 @@ Tuomareiden toiminnot: Pelien tulosten manipulointi, pelaajien manipulointi järj
 
 Pelaajien toiminnot: Tietojensa muuttaminen halutessaan.
 
+Lisättyjä ominaisuuksia: Ranking sekä pisteenlasku, joiden perusteella voidaan seurata niin tilastoja pelaajien sekä joukkueiden osalta, sekä tulevina tapahtumina myös seedata turnaukseen osallistuvat joukkueet rakentavalla tavalla. Mahdollisena laajennusideana tiedostoon tallentaminen mahdollisena sekä joukkueiden lisääminen suoraan tekstitiedostosta rankinglistan avulla
+
 

@@ -10,6 +10,10 @@ package Osallistuja;
  */
 public class Pelaaja {
 
+    /**
+     * Pelaaja-luokan sisällä olevat määrittelevät luokkamuuttujat kertovat pelaajan nimen, pelaajanumeron, joukkueen johon he kuuluvat sekä rankingin listoilla
+     */
+    
     public String nimi;
     public int numero;
     public String joukkue;
@@ -17,6 +21,15 @@ public class Pelaaja {
 
     /*
      * Luokan tarkoituksena pitää pelaajat listattavina henkilöinä, jotta laajennettaessa esim. voidaan siirtyä mm. 1vs1 kuvioon halutessa.
+     */
+    
+    /**
+     * Konstruktorissa luodaan Pelaaja attribuuteilla, jotka määrittelevät hänen toimintansa joukkueessa.
+     * 
+     * @param nimi Pelaajan nimi
+     * @param numero Pelaajanumero
+     * @param joukkue Joukkue johon pelaaja kuuluu
+     * @param ranking Ranking-arvo jonka pelaaja saa luotuaan hänet kertaalleen
      */
     
     public Pelaaja(String nimi, int numero, String joukkue, int ranking) {

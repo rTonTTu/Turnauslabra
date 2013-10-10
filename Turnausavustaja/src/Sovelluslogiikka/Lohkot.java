@@ -13,19 +13,43 @@ import java.util.ArrayList;
  */
 public class Lohkot {
     
+    /**
+     * Luokkaan laitettu lista joukkueista, jotka kuuluvat kyseiseen lohkoon
+     */
+    
     private ArrayList<Joukkue> lohko;
+    
+    
+    /**
+     * Konstruktorissa luodaan lohkolle lista joukkueita. Kyseessä on tavallaan apuluokka jolla vain kontrolloidaan osaa joukkueista mikäli siihen on tarve.
+     */
     
     public Lohkot() {
         this.lohko = new ArrayList<>();
     }
     
+    
+    /**
+     * Metodi lisää joukkueen lohkon listaan
+     * @param joukkue Lisättävä joukkue
+     */
     public void lisaaJoukkue(Joukkue joukkue) {
         this.lohko.add(joukkue);
     }
     
+    /**
+     * Metodi poistaa joukkueen lohkon listalta
+     * @param joukkue Poistettava joukkue
+     */
+    
     public void poistaJoukkue(Joukkue joukkue) {
         this.lohko.remove(joukkue);
     }
+    
+    
+    /**
+     * Metodi tulostaa joukkueet, jotka kuuluvat listaan.
+     */
     
     public void tulostaJoukkueet() {
         for (Joukkue joukkue : this.lohko) {

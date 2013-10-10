@@ -10,12 +10,12 @@ import Osallistuja.Pelaaja;
  *
  * @author TonTTu
  */
-public class Käyttöjärjestelmä extends javax.swing.JFrame {
+public class Kayttojarjestelma extends javax.swing.JFrame {
 
     /**
-     * Creates new form Käyttöjärjestelmä
+     * Creates new form Kayttojarjestelma
      */
-    public Käyttöjärjestelmä() {
+    public Kayttojarjestelma() {
         initComponents();
     }
 
@@ -159,14 +159,17 @@ public class Käyttöjärjestelmä extends javax.swing.JFrame {
     }//GEN-LAST:event_JoukkueKenttaActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        String joukkueeNimi = JoukkueKentta.getText();
-        String pelaaja1Nimi = Pelaaja1Kentta.getText();
-        String pelaaja2Nimi = Pelaaja2Kentta.getText();
-        Joukkue lisattava = new Joukkue(joukkueeNimi);
-        lisattava.lisaaPelaaja(new Pelaaja(pelaaja1Nimi, lisattava.nimi));
-        JoukkueKentta.setText("");
-        Pelaaja1Kentta.setText("");
-        Pelaaja2Kentta.setText("");
+        if (!JoukkueKentta.getText().isEmpty() || !Pelaaja1Kentta.getText().isEmpty() || !Pelaaja2Kentta.getText().isEmpty()) {
+            String joukkueeNimi = JoukkueKentta.getText();
+            String pelaaja1Nimi = Pelaaja1Kentta.getText();
+            String pelaaja2Nimi = Pelaaja2Kentta.getText();
+            Joukkue lisattava = new Joukkue(joukkueeNimi);
+            lisattava.lisaaPelaaja(new Pelaaja(pelaaja1Nimi, lisattava.nimi));
+            lisattava.lisaaPelaaja(new Pelaaja(pelaaja2Nimi, lisattava.nimi));
+            JoukkueKentta.setText("");
+            Pelaaja1Kentta.setText("");
+            Pelaaja2Kentta.setText("");
+        }
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
@@ -196,20 +199,20 @@ public class Käyttöjärjestelmä extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(Käyttöjärjestelmä.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Kayttojarjestelma.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(Käyttöjärjestelmä.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Kayttojarjestelma.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(Käyttöjärjestelmä.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Kayttojarjestelma.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(Käyttöjärjestelmä.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Kayttojarjestelma.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new Käyttöjärjestelmä().setVisible(true);
+                new Kayttojarjestelma().setVisible(true);
             }
         });
     }

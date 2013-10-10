@@ -126,7 +126,7 @@ public class Kayttojarjestelma extends javax.swing.JFrame {
         jPanel2.setBorder(javax.swing.BorderFactory.createTitledBorder("Joukkueet"));
 
         jList1.setModel(new javax.swing.AbstractListModel() {
-            String[] strings = { "Item 1", "Item 2", "Item 3", "Item 4", "Item 5" };
+            String[] strings = { "Kakkavisa", "Porkkanaraaste", "Ponkipojat", "Aitoa_Menoa.avi", "Kansallissosialistiset hirvet" };
             public int getSize() { return strings.length; }
             public Object getElementAt(int i) { return strings[i]; }
         });

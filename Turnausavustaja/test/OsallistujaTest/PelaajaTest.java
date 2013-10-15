@@ -24,12 +24,7 @@ public class PelaajaTest {
     }
 
     @BeforeClass
-    public void setUpClass() {
-        String nimi = "pekka";
-        String joukkue = "Kikkareet";
-        this.pelaaja = new Pelaaja(nimi, joukkue);
-
-
+    public static void setUpClass() {
     }
 
     @AfterClass
@@ -38,12 +33,18 @@ public class PelaajaTest {
 
     @Before
     public void setUp() {
+        String nimi = "pekka";
+        String joukkue = "Kikkareet";
+        this.pelaaja = new Pelaaja(nimi, joukkue);
+
+
     }
 
     @After
     public void tearDown() {
     }
 
+    @Test
     public void lisataanRanking() {
         this.pelaaja.asetaRanking(5);
         assertEquals(this.pelaaja.haeRanking(), 5);

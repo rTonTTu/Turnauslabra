@@ -58,6 +58,10 @@ public class Pelaaja {
     public String toString() {
         return this.nimi;
     }
+    
+    public void asetaJoukkue(String joukkue) {
+        this.joukkue = joukkue;
+    }
 
     public int haeNumero() {
         return this.numero;

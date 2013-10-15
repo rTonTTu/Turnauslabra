@@ -32,7 +32,7 @@ public class Joukkue {
      * @param nimi Joukkueen nimi
      * @param pisteet Joukkueen keräämät pisteet
      * @param ranking Joukkueen tämänhetkinen rankingsijoitus
-    *
+     *
      */
     public Joukkue(String nimi, int ranking, int pisteet) {
         this.nimi = nimi;
@@ -72,15 +72,11 @@ public class Joukkue {
      * Metodi pitää huolen ettei joukkueen pelaajamäärä nouse yli kahden.
      *
      * @param pelaaja Määritelty pelaaja joka lisätään
-    *
+     *
      */
     public void lisaaPelaaja(Pelaaja pelaaja) {
-        if (this.pelaajat.size() > 2) {
-            System.out.println("Liian monta pelaajaa joukkueessa");
-        } else {
-            this.pelaajat.add(pelaaja);
-        }
-
+        pelaaja.asetaJoukkue(this.nimi);
+        this.pelaajat.add(pelaaja);
     }
 
     /**
@@ -88,7 +84,7 @@ public class Joukkue {
      * ei tapahdu, ilmoittaa ohjelma siitä tekstikentässä huomioiden asian.
      *
      * @param pelaaja Määritelty pelaaja joka poistetaan
-    *
+     *
      */
     public void poistaPelaaja(Pelaaja pelaaja) {
         if (this.pelaajat.contains(pelaaja)) {
@@ -103,7 +99,7 @@ public class Joukkue {
      * joukkueessa ei ole pelaajia,
      *
      * @param joukkue Listattava joukkue joka käsitellään ja tulostetaan.
-    *
+     *
      */
     public void listaaPelaajat() {
         if (this.pelaajat.isEmpty()) {

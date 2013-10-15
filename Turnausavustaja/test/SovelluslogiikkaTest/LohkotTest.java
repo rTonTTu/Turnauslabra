@@ -48,17 +48,12 @@ public class LohkotTest {
         this.testiLohko.lisaaJoukkue(testiJoukkue);
         assertEquals(this.testiLohko.getLohko().size(), 1);
     }
+
     @Test
     public void testataanJoukkueenPoistoa() {
         this.testiLohko.lisaaJoukkue(testiJoukkue);
         assertEquals(this.testiLohko.getLohko().size(), 1);
         this.testiLohko.poistaJoukkue(testiJoukkue);
         assertEquals(this.testiLohko.getLohko().size(), 0);
-    }
-    
-    @Test
-    public void testaanKonstruktoriaHuvikseen() {
-        Lohkot lohko = new Lohkot();
-        assertEquals(lohko.getLohko(), true);
     }
 }

@@ -75,8 +75,13 @@ public class Joukkue {
      *
      */
     public void lisaaPelaaja(Pelaaja pelaaja) {
-        pelaaja.asetaJoukkue(this.nimi);
-        this.pelaajat.add(pelaaja);
+        if (this.pelaajat.size() > 2) {
+            System.out.println("Liian monta pelaajaa joukkueessa");
+        } else {
+            pelaaja.asetaJoukkue(this.nimi);
+            this.pelaajat.add(pelaaja);
+        }
+
     }
 
     /**

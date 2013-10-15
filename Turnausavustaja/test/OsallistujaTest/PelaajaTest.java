@@ -36,8 +36,6 @@ public class PelaajaTest {
         String nimi = "pekka";
         String joukkue = "Kikkareet";
         this.pelaaja = new Pelaaja(nimi, joukkue);
-
-
     }
 
     @After
@@ -45,10 +43,25 @@ public class PelaajaTest {
     }
 
     @Test
-    public void lisataanRanking() {
+    public void toimiikoRankingAsettaminen() {
         this.pelaaja.asetaRanking(5);
         assertEquals(this.pelaaja.haeRanking(), 5);
 
+    }
+
+    @Test
+    public void toimiikoJoukkueenAsettaminen() {
+        this.pelaaja.asetaJoukkue("Joukkue");
+        assertEquals(this.pelaaja.haeJoukkue(), "Joukkue");
+    }
+
+    @Test
+    public void toimiikoUudenPelaajanLuonti() {
+        Pelaaja testattava = new Pelaaja("Janne", 7, "Karvapallot", 2);
+        assertEquals(testattava.toString(), "Janne");
+        assertEquals(testattava.haeNumero(), 7);
+        assertEquals(testattava.haeJoukkue(), "Karvapallot");
+        assertEquals(testattava.haeRanking(), 2);
     }
     // TODO add test methods here.
     // The methods must be annotated with annotation @Test. For example:

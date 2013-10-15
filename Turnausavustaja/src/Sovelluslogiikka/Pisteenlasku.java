@@ -4,6 +4,8 @@
  */
 package Sovelluslogiikka;
 
+import Osallistuja.Joukkue;
+
 /**
  *
  * @author TonTTu
@@ -13,9 +15,9 @@ public class Pisteenlasku {
     /*
      * Luokka pitää kirjaa joukkueiden voitoista, häviöistä, pisteistä, tasapeleistä sekä ylipäänsä pelatuista peleistä, jotta tuloksia voidaan ylläpitää.
      */
-    
     /**
-     * Luokan sisällä olevat metodit seuraavat jokaisen joukkueen pisteenlaskua, josta saadaan tulokset. Luokkamuuttujat ovat itsestäänselviä.
+     * Luokan sisällä olevat metodit seuraavat jokaisen joukkueen pisteenlaskua,
+     * josta saadaan tulokset. Luokkamuuttujat ovat itsestäänselviä.
      */
     private int pisteet;
     private int voitot;
@@ -24,10 +26,9 @@ public class Pisteenlasku {
     private int haviot;
 
     /**
-     * Konstruktorissa luodaan uusi pisteenlaskulista joukkueelle, joka osallistuu turnaukseen.
+     * Konstruktorissa luodaan uusi pisteenlaskulista joukkueelle, joka
+     * osallistuu turnaukseen.
      */
-    
-    
     public Pisteenlasku() {
         this.pisteet = 0;
         this.pelatut = 0;
@@ -39,7 +40,7 @@ public class Pisteenlasku {
     /*
      * halutessaan tuomarit voivat säätää käsin turnauksen osallistuneen joukkueen tuloksia, mikäli esim. turnaus on ehtinyt alkaa tai tarvitaan muista turnauksista tuloksia.
      */
-    public void setPisteet(int voitot, int tasapelit, int haviot) {
+    public void asetaPisteet(int voitot, int tasapelit, int haviot) {
         if (voitot < 0 || tasapelit < 0 || haviot < 0) {
             System.out.println("Tulokset eivät voi olla negatiivisia!");
         } else {
@@ -50,11 +51,11 @@ public class Pisteenlasku {
             this.pisteet = (voitot * 3) + tasapelit;
         }
     }
-    
-    /**
-     * Metodi lisää joukkueelle voiton, kolme pistettä sekä pelatun pelin tilastoihin
-     */
 
+    /**
+     * Metodi lisää joukkueelle voiton, kolme pistettä sekä pelatun pelin
+     * tilastoihin
+     */
     public void lisaaVoitto() {
         this.pisteet += 3;
         this.voitot++;
@@ -64,39 +65,38 @@ public class Pisteenlasku {
     /**
      * Metodi lisää joukkueelle häviön sekä pelatun pelin tilastoihin
      */
-    
     public void lisaaHavio() {
         this.haviot++;
         this.pelatut++;
     }
-    
-    /**
-     * Metodi lisää joukkueelle tasapelin, pisteen sekä pelatun pelin tilastoihin
-     */
 
+    /**
+     * Metodi lisää joukkueelle tasapelin, pisteen sekä pelatun pelin
+     * tilastoihin
+     */
     public void lisaaTasuri() {
         this.tasapelit++;
         this.pisteet++;
         this.pelatut++;
     }
 
-    public int getPisteet() {
+    public int haePisteet() {
         return this.pisteet;
     }
 
-    public int getVoitot() {
+    public int haeVoitot() {
         return this.voitot;
     }
 
-    public int getHaviot() {
+    public int haeHaviot() {
         return this.haviot;
     }
 
-    public int getTasapelit() {
+    public int haeTasapelit() {
         return this.tasapelit;
     }
 
-    public int getOttelujenLkm() {
+    public int haeOttelujenLkm() {
         return this.pelatut;
     }
 

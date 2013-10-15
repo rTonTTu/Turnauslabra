@@ -46,7 +46,35 @@ public class JoukkueTest {
     @Test
     public void pelaajanLisaaminenJoukkueeseen() {
         this.testiJoukkue.lisaaPelaaja(testiPelaaja);
-        assertEquals(1, this.testiJoukkue.pelaajat.size());
+        int koko = this.testiJoukkue.pelaajat.size();
+        assertEquals(koko, 1);
+    }
+
+    @Test
+    public void pelaajanPoistaminenJoukkueesta() {
+        this.testiJoukkue.lisaaPelaaja(testiPelaaja);
+        this.testiJoukkue.poistaPelaaja(testiPelaaja);
+        assertEquals(this.testiJoukkue.pelaajat.size(), 0);
+    }
+
+    @Test
+    public void toimiikoJoukkueenLuominen() {
+        Joukkue testattava = new Joukkue("Kuulalaakerit", 2, 8);
+        assertEquals(testattava.nimi, "Kuulalaakerit");
+        assertEquals(testattava.haePisteet(), 8);
+        assertEquals(testattava.haeRanking(), 2);
+    }
+
+    @Test
+    public void toimiikoRankinginAsettaminen() {
+        this.testiJoukkue.asetaRanking(5);
+        assertEquals(this.testiJoukkue.haeRanking(), 5);
+    }
+
+    @Test
+    public void toimiikoPisteidenAsettaminen() {
+        this.testiJoukkue.asetaPisteet(8);
+        assertEquals(this.testiJoukkue.haePisteet(), 8);
     }
     // TODO add test methods here.
     // The methods must be annotated with annotation @Test. For example:

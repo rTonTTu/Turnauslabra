@@ -38,31 +38,33 @@ public class Joukkue {
         this.nimi = nimi;
         this.ranking = ranking;
         this.pisteet = pisteet;
+        this.pelaajat = new ArrayList<Pelaaja>();
     }
-
+    
     public Joukkue(String nimi) {
         this.nimi = nimi;
         this.ranking = 0;
         this.pisteet = 0;
+        this.pelaajat = new ArrayList<Pelaaja>();
     }
-
+    
     public int haeRanking() {
         return this.ranking;
     }
-
+    
     public void asetaRanking(int numero) {
         this.ranking = numero;
     }
-
+    
     @Override
     public String toString() {
         return this.nimi;
     }
-
+    
     public int haePisteet() {
         return this.pisteet;
     }
-
+    
     public void asetaPisteet(int pisteet) {
         this.pisteet = pisteet;
     }
@@ -81,7 +83,6 @@ public class Joukkue {
             pelaaja.asetaJoukkue(this.nimi);
             this.pelaajat.add(pelaaja);
         }
-
     }
 
     /**

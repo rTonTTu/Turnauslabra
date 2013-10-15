@@ -25,7 +25,7 @@ public class Lohkot {
      */
     
     public Lohkot() {
-        this.lohko = new ArrayList<>();
+        this.lohko = new ArrayList<Joukkue>();
     }
     
     

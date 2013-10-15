@@ -4,6 +4,8 @@
  */
 package SovelluslogiikkaTest;
 
+import Osallistuja.Joukkue;
+import Sovelluslogiikka.Lohkot;
 import org.junit.After;
 import org.junit.AfterClass;
 import org.junit.Before;
@@ -16,28 +18,41 @@ import static org.junit.Assert.*;
  * @author TonTTu
  */
 public class LohkotTest {
-    
+
+    public Joukkue testiJoukkue;
+    public Lohkot testiLohko;
+
     public LohkotTest() {
     }
-    
+
     @BeforeClass
     public static void setUpClass() {
     }
-    
+
     @AfterClass
     public static void tearDownClass() {
     }
-    
+
     @Before
     public void setUp() {
+        this.testiJoukkue = new Joukkue("Testaajat");
+        this.testiLohko = new Lohkot();
     }
-    
+
     @After
     public void tearDown() {
     }
-    // TODO add test methods here.
-    // The methods must be annotated with annotation @Test. For example:
-    //
-    // @Test
-    // public void hello() {}
+
+    @Test
+    public void testataanJoukkueenLisaysta() {
+        this.testiLohko.lisaaJoukkue(testiJoukkue);
+        assertEquals(this.testiLohko.getLohko().size(), 1);
+    }
+
+    public void testataanJoukkueenPoistoa() {
+        this.testiLohko.lisaaJoukkue(testiJoukkue);
+        assertEquals(this.testiLohko.getLohko().size(), 1);
+        this.testiLohko.poistaJoukkue(testiJoukkue);
+        assertEquals(this.testiLohko.getLohko().size(), 0);
+    }
 }

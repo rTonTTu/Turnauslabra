@@ -47,6 +47,13 @@ public class Pelaaja {
        this.ranking = 0;
     }
     
+    public Pelaaja(String pelaaja1Nimi) {
+        this.nimi = pelaaja1Nimi;
+        this.numero = 0;
+        this.ranking = 0;
+        
+    }
+    
     @Override
     public String toString() {
         return this.nimi;

@@ -41,6 +41,8 @@ public class Kayttojarjestelma extends javax.swing.JFrame {
         jScrollPane2 = new javax.swing.JScrollPane();
         jList1 = new javax.swing.JList();
         jPanel3 = new javax.swing.JPanel();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        tulostusAlue = new javax.swing.JTextArea();
         jMenuBar1 = new javax.swing.JMenuBar();
         jMenu1 = new javax.swing.JMenu();
         jMenuItem1 = new javax.swing.JMenuItem();
@@ -152,15 +154,25 @@ public class Kayttojarjestelma extends javax.swing.JFrame {
 
         jPanel3.setBorder(javax.swing.BorderFactory.createTitledBorder("Turnaus"));
 
+        tulostusAlue.setColumns(20);
+        tulostusAlue.setRows(5);
+        jScrollPane1.setViewportView(tulostusAlue);
+
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
         jPanel3.setLayout(jPanel3Layout);
         jPanel3Layout.setHorizontalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 657, Short.MAX_VALUE)
+            .addGroup(jPanel3Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jScrollPane1)
+                .addContainerGap())
         );
         jPanel3Layout.setVerticalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 253, Short.MAX_VALUE)
+            .addGroup(jPanel3Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 231, Short.MAX_VALUE)
+                .addContainerGap())
         );
 
         jMenu1.setText("File");
@@ -221,6 +233,7 @@ public class Kayttojarjestelma extends javax.swing.JFrame {
             JoukkueKentta.setText("");
             Pelaaja1Kentta.setText("");
             Pelaaja2Kentta.setText("");
+            tulostusAlue.setText(lisattava.toString() + ": " + lisattava.pisteet);
         }
     }//GEN-LAST:event_jButton1ActionPerformed
 
@@ -284,6 +297,8 @@ public class Kayttojarjestelma extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
+    private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
+    private javax.swing.JTextArea tulostusAlue;
     // End of variables declaration//GEN-END:variables
 }

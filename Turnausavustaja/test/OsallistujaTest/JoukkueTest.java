@@ -70,12 +70,6 @@ public class JoukkueTest {
         this.testiJoukkue.asetaRanking(5);
         assertEquals(this.testiJoukkue.haeRanking(), 5);
     }
-
-    @Test
-    public void toimiikoPisteidenAsettaminen() {
-        this.testiJoukkue.asetaPisteet(8);
-        assertEquals(this.testiJoukkue.haePisteet(), 8);
-    }
     // TODO add test methods here.
     // The methods must be annotated with annotation @Test. For example:
     //

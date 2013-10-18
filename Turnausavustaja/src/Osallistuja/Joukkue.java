@@ -4,6 +4,7 @@
  */
 package Osallistuja;
 
+import Sovelluslogiikka.Pisteenlasku;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -19,7 +20,7 @@ public class Joukkue {
      */
     public String nimi;
     public int ranking;
-    public int pisteet;
+    public Pisteenlasku pisteet;
     public ArrayList<Pelaaja> pelaajat;
 
     /*
@@ -37,36 +38,27 @@ public class Joukkue {
     public Joukkue(String nimi, int ranking, int pisteet) {
         this.nimi = nimi;
         this.ranking = ranking;
-        this.pisteet = pisteet;
+        this.pisteet = new Pisteenlasku();
         this.pelaajat = new ArrayList<Pelaaja>();
     }
-    
+
     public Joukkue(String nimi) {
         this.nimi = nimi;
         this.ranking = 0;
-        this.pisteet = 0;
+        this.pisteet = new Pisteenlasku();
         this.pelaajat = new ArrayList<Pelaaja>();
     }
-    
+
     public int haeRanking() {
         return this.ranking;
     }
-    
+
     public void asetaRanking(int numero) {
         this.ranking = numero;
     }
-    
-    @Override
-    public String toString() {
-        return this.nimi;
-    }
-    
-    public int haePisteet() {
+
+    public Pisteenlasku haePisteet() {
         return this.pisteet;
-    }
-    
-    public void asetaPisteet(int pisteet) {
-        this.pisteet = pisteet;
     }
 
     /**
@@ -115,5 +107,9 @@ public class Joukkue {
         for (Pelaaja pelaaja : pelaajat) {
             System.out.println(pelaaja.toString());
         }
+    }
+
+    public String toString() {
+        return this.nimi + "(Pelaajat: " + this.pelaajat.toString() + ")";
     }
 }

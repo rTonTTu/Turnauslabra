@@ -297,6 +297,7 @@ public class Kayttojarjestelma extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+
     private void jMenu1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenu1ActionPerformed
         System.exit(0);
     }//GEN-LAST:event_jMenu1ActionPerformed

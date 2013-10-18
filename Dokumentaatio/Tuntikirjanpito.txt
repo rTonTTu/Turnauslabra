@@ -6,6 +6,7 @@ To 17.9 20:50-21:00 10min - Tarkannettu luokkakaaviota
 To 3.10 12:00-15:55 3h 55min - Graafisen käyttöliittymän suunnittelua, swingbuilderin testailua ja uudelleenrakentelua.
 Pe 4.10 17:30-19:45 2h 15min - Sekvenssikaavioiden lisäilyä, javadocin kiinniottaminen mm. kaikkeen, luokkien refaktorointia
 Ti 15.10 11:00-14:45 3h 45min - Testien luomista luokille, yleistä suunnittelua
+Pe 18.10 20:00-22:50 2h 50min - Graafisen käyttöliittymän rakentelua, järjestelmän luokkien refaktorointia ja muuta tweakkailua, jätetty palautettavaksi.
 
-Kokonaisaika: 16h 35 min.
+Kokonaisaika: 19h 25 min.
  

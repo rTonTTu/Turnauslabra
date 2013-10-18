@@ -80,6 +80,10 @@ public class Pisteenlasku {
         this.pelatut++;
     }
     
+    /**
+     * Metodi nollaa joukkueen tilastot
+     */
+    
     public void nollaa() {
         this.tasapelit = 0;
         this.pisteet = 0;

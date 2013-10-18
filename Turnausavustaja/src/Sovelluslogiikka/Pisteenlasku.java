@@ -79,6 +79,14 @@ public class Pisteenlasku {
         this.pisteet++;
         this.pelatut++;
     }
+    
+    public void nollaa() {
+        this.tasapelit = 0;
+        this.pisteet = 0;
+        this.pelatut = 0;
+        this.voitot = 0;
+        this.haviot = 0;
+    }
 
     public int haePisteet() {
         return this.pisteet;
@@ -103,10 +111,10 @@ public class Pisteenlasku {
     @Override
     public String toString() {
         return "Pelattu " + this.pelatut + " peliä"
-                + ", voittoja " + this.voitot
-                + ", tasapelejä " + this.tasapelit
-                + ", häviöitä " + this.haviot
-                + ", pisteitä " + this.pisteet;
+                + ", voittoja: " + this.voitot
+                + ", tasapelejä: " + this.tasapelit
+                + ", häviöitä: " + this.haviot
+                + ", pisteitä: " + this.pisteet;
 
     }
 }

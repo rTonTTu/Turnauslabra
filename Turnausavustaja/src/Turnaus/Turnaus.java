@@ -81,6 +81,7 @@ public class Turnaus {
      * Metodi tulostaa kaikki turnaukseen osallistuvat joukkueet
      */
     public void tulostaKaikki() {
+      
         for (Joukkue osallistuja : this.osallistujat) {
             System.out.println(osallistuja);
         }

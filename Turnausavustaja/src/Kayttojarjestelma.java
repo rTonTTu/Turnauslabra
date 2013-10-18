@@ -3,6 +3,8 @@ import Osallistuja.Joukkue;
 import Osallistuja.Pelaaja;
 import Sovelluslogiikka.Lohkot;
 import Turnaus.Turnaus;
+import javax.swing.DefaultListModel;
+import javax.swing.JList;
 
 /*
  * To change this template, choose Tools | Templates
@@ -17,6 +19,8 @@ public class Kayttojarjestelma extends javax.swing.JFrame {
     /**
      * Creates new form Kayttojarjestelma
      */
+ 
+    
     public Kayttojarjestelma() {
         initComponents();
     }
@@ -31,8 +35,8 @@ public class Kayttojarjestelma extends javax.swing.JFrame {
     private void initComponents() {
 
         jPanel2 = new javax.swing.JPanel();
-        jScrollPane2 = new javax.swing.JScrollPane();
-        joukkueTaulukko = new javax.swing.JList();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        joukkueLista = new javax.swing.JList();
         tulostusAlue = new javax.swing.JTabbedPane();
         jTabbedPane1 = new javax.swing.JTabbedPane();
         jPanel1 = new javax.swing.JPanel();
@@ -45,14 +49,13 @@ public class Kayttojarjestelma extends javax.swing.JFrame {
         jButton1 = new javax.swing.JButton();
         jButton2 = new javax.swing.JButton();
         jPanel4 = new javax.swing.JPanel();
-        jButton5 = new javax.swing.JButton();
-        jButton6 = new javax.swing.JButton();
-        jButton7 = new javax.swing.JButton();
-        jButton8 = new javax.swing.JButton();
+        voittoNappi = new javax.swing.JButton();
+        nollausNappi = new javax.swing.JButton();
+        tasuriNappi = new javax.swing.JButton();
+        havioNappi = new javax.swing.JButton();
         jLabel4 = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
         jLabel6 = new javax.swing.JLabel();
-        jTabbedPane4 = new javax.swing.JTabbedPane();
         jMenuBar1 = new javax.swing.JMenuBar();
         jMenu1 = new javax.swing.JMenu();
         jMenuItem1 = new javax.swing.JMenuItem();
@@ -61,28 +64,22 @@ public class Kayttojarjestelma extends javax.swing.JFrame {
 
         jPanel2.setBorder(javax.swing.BorderFactory.createTitledBorder("Joukkueet"));
 
-        joukkueTaulukko.setModel(new javax.swing.AbstractListModel() {
-            String[] strings = { "Kakkavisa", "Porkkanaraaste", "Ponkipojat", "Aitoa_Menoa.avi", "Kansallissosialistiset hirvet" };
+        joukkueLista.setModel(new javax.swing.AbstractListModel() {
+            String[] strings = { "Valittavat", "Joukkueet", "Joita", "Manipuloidaan", "Tästä" };
             public int getSize() { return strings.length; }
             public Object getElementAt(int i) { return strings[i]; }
         });
-        jScrollPane2.setViewportView(joukkueTaulukko);
+        jScrollPane1.setViewportView(joukkueLista);
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
         jPanel2Layout.setHorizontalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 482, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap())
+            .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 502, Short.MAX_VALUE)
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel2Layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 146, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addComponent(jScrollPane1, javax.swing.GroupLayout.Alignment.TRAILING)
         );
 
         tulostusAlue.setBorder(javax.swing.BorderFactory.createTitledBorder("Turnaus"));
@@ -169,45 +166,48 @@ public class Kayttojarjestelma extends javax.swing.JFrame {
 
         jPanel4.setBorder(javax.swing.BorderFactory.createTitledBorder("Tulokset"));
 
-        jButton5.setText("Voitto");
-        jButton5.addActionListener(new java.awt.event.ActionListener() {
+        voittoNappi.setText("Voitto");
+        voittoNappi.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton5ActionPerformed(evt);
+                voittoNappiActionPerformed(evt);
             }
         });
 
-        jButton6.setText("Nollaa");
-        jButton6.setActionCommand("nollaa");
-        jButton6.addActionListener(new java.awt.event.ActionListener() {
+        nollausNappi.setText("Nollaa");
+        nollausNappi.setActionCommand("nollaa");
+        nollausNappi.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton6ActionPerformed(evt);
+                nollausNappiActionPerformed(evt);
             }
         });
 
-        jButton7.setText("Tasapeli");
-        jButton7.setActionCommand("Tasapeli");
-        jButton7.addActionListener(new java.awt.event.ActionListener() {
+        tasuriNappi.setText("Tasapeli");
+        tasuriNappi.setActionCommand("Tasapeli");
+        tasuriNappi.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton7ActionPerformed(evt);
+                tasuriNappiActionPerformed(evt);
             }
         });
 
-        jButton8.setText("Häviö");
-        jButton8.setActionCommand("Havio");
-        jButton8.addActionListener(new java.awt.event.ActionListener() {
+        havioNappi.setText("Häviö");
+        havioNappi.setActionCommand("Havio");
+        havioNappi.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton8ActionPerformed(evt);
+                havioNappiActionPerformed(evt);
             }
         });
 
+        jLabel4.setFont(new java.awt.Font("Tahoma", 0, 10)); // NOI18N
         jLabel4.setText("Valitse oikealla olevasta taulukosta joukkue jonka jälkeen lisää");
         jLabel4.setVerticalAlignment(javax.swing.SwingConstants.TOP);
         jLabel4.setFocusable(false);
 
+        jLabel5.setFont(new java.awt.Font("Tahoma", 0, 10)); // NOI18N
         jLabel5.setText("sille haluttu lopputulos alla olevista painikkeista.");
         jLabel5.setVerticalAlignment(javax.swing.SwingConstants.TOP);
         jLabel5.setFocusable(false);
 
+        jLabel6.setFont(new java.awt.Font("Tahoma", 0, 10)); // NOI18N
         jLabel6.setText("Huomaathan, että sinun tulee myös merkitä häviöt ja tasapelit!");
         jLabel6.setVerticalAlignment(javax.swing.SwingConstants.TOP);
         jLabel6.setFocusable(false);
@@ -221,13 +221,13 @@ public class Kayttojarjestelma extends javax.swing.JFrame {
                 .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addGroup(jPanel4Layout.createSequentialGroup()
-                        .addComponent(jButton5)
+                        .addComponent(voittoNappi)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jButton7)
+                        .addComponent(tasuriNappi)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jButton8)
+                        .addComponent(havioNappi)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(jButton6))
+                        .addComponent(nollausNappi))
                     .addComponent(jLabel5, javax.swing.GroupLayout.DEFAULT_SIZE, 330, Short.MAX_VALUE)
                     .addComponent(jLabel6, javax.swing.GroupLayout.DEFAULT_SIZE, 330, Short.MAX_VALUE))
                 .addContainerGap())
@@ -240,17 +240,16 @@ public class Kayttojarjestelma extends javax.swing.JFrame {
                 .addComponent(jLabel5)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jLabel6)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 35, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 38, Short.MAX_VALUE)
                 .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jButton5)
-                    .addComponent(jButton6)
-                    .addComponent(jButton7)
-                    .addComponent(jButton8))
+                    .addComponent(voittoNappi)
+                    .addComponent(nollausNappi)
+                    .addComponent(tasuriNappi)
+                    .addComponent(havioNappi))
                 .addContainerGap())
         );
 
         jTabbedPane1.addTab("tab1", jPanel4);
-        jTabbedPane1.addTab("tab3", jTabbedPane4);
 
         jMenu1.setText("File");
         jMenu1.addActionListener(new java.awt.event.ActionListener() {
@@ -271,21 +270,22 @@ public class Kayttojarjestelma extends javax.swing.JFrame {
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(14, 14, 14)
-                .addComponent(jTabbedPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 367, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(10, 10, 10)
-                .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-            .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(tulostusAlue))
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(8, 8, 8)
+                        .addComponent(jTabbedPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 367, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addComponent(tulostusAlue)))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, 0, Short.MAX_VALUE)
-                    .addComponent(jTabbedPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 174, Short.MAX_VALUE))
+                    .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jTabbedPane1))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(tulostusAlue, javax.swing.GroupLayout.PREFERRED_SIZE, 315, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
@@ -301,13 +301,21 @@ public class Kayttojarjestelma extends javax.swing.JFrame {
         System.exit(0);
     }//GEN-LAST:event_jMenu1ActionPerformed
 
-    private void jButton6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton6ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jButton6ActionPerformed
+    private void havioNappiActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_havioNappiActionPerformed
+        // valittuJoukkue.pisteet.lisaaHavio();
+    }//GEN-LAST:event_havioNappiActionPerformed
 
-    private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jButton5ActionPerformed
+    private void tasuriNappiActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tasuriNappiActionPerformed
+        // valittuJoukkue.pisteet.lisaaTasuri();
+    }//GEN-LAST:event_tasuriNappiActionPerformed
+
+    private void nollausNappiActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_nollausNappiActionPerformed
+        // valittuJoukkue.pisteet.nollaa();
+    }//GEN-LAST:event_nollausNappiActionPerformed
+
+    private void voittoNappiActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_voittoNappiActionPerformed
+        // valittuJoukkue.pisteet.lisaaVoitto();
+    }//GEN-LAST:event_voittoNappiActionPerformed
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
         JoukkueKentta.setText("");
@@ -326,21 +334,12 @@ public class Kayttojarjestelma extends javax.swing.JFrame {
             JoukkueKentta.setText("");
             Pelaaja1Kentta.setText("");
             Pelaaja2Kentta.setText("");
-
         }
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void JoukkueKenttaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JoukkueKenttaActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_JoukkueKenttaActionPerformed
-
-    private void jButton7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton7ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jButton7ActionPerformed
-
-    private void jButton8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton8ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jButton8ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -380,12 +379,9 @@ public class Kayttojarjestelma extends javax.swing.JFrame {
     private javax.swing.JTextField JoukkueKentta;
     private javax.swing.JTextField Pelaaja1Kentta;
     private javax.swing.JTextField Pelaaja2Kentta;
+    private javax.swing.JButton havioNappi;
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
-    private javax.swing.JButton jButton5;
-    private javax.swing.JButton jButton6;
-    private javax.swing.JButton jButton7;
-    private javax.swing.JButton jButton8;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
@@ -398,10 +394,12 @@ public class Kayttojarjestelma extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel4;
-    private javax.swing.JScrollPane jScrollPane2;
+    private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTabbedPane jTabbedPane1;
-    private javax.swing.JTabbedPane jTabbedPane4;
-    private javax.swing.JList joukkueTaulukko;
+    private javax.swing.JList joukkueLista;
+    private javax.swing.JButton nollausNappi;
+    private javax.swing.JButton tasuriNappi;
     private javax.swing.JTabbedPane tulostusAlue;
+    private javax.swing.JButton voittoNappi;
     // End of variables declaration//GEN-END:variables
 }
